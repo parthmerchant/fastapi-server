@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+
+  app:
+    build: .
+    ports:
+      - 9018:9018
+    networks:
+      - default
+    command: uvicorn app:app --host 0.0.0.0 --port 9018 --reload

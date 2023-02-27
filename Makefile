@@ -6,4 +6,9 @@ venv:
 
 .PHONY: run 
 run:
-	cd src && uvicorn app:app --host 0.0.0.0 --port 9018 --reload	
+	uvicorn app:app --host 0.0.0.0 --port 9018 --reload
+
+.PHONY: launch
+launch:
+	docker-compose build app && docker-compose up --remove-orphans -d app
+
